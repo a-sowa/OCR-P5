@@ -1,0 +1,18 @@
+header {
+    background-color: rgba(245, 245, 245, 1);
+    border-bottom: 1px solid #000;
+    .header-brand__logo {
+        font-family: 'Old Standard TT', serif;
+        font-size: 2rem;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .header__cart-icon {
+        font-size: 1.5rem;
+    }
+}
