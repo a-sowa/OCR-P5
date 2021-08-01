@@ -2,47 +2,53 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script src="https://kit.fontawesome.com/e2a6ae481a.js" crossorigin="anonymous"></script>
         <title>RETROCam - Accueil</title>
     </head>
 
     <body> 
         <header>
-            <div>
+            <div class="header__brand">
                 <a href="index.html">
                     <img src="" alt="Logo RETROCam"/>
                 </a>
 
-                <nav>     
+                <nav class="nav-menu">     
                     <ul>
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Catalogue</a></li>
-                        <li><a href="#">F.A.Q.</a></li>
-                        <li><a href="#">Contactez-nous</a></li>
+                        <li class="nav-menu__item"><a href="#">Accueil</a></li>
+                        <li class="nav-menu__item"><a href="#">Catalogue</a></li>
+                        <li class="nav-menu__item"><a href="#">F.A.Q.</a></li>
+                        <li class="nav-menu__item"><a href="#">Contactez-nous</a></li>
                     </ul>      
                 </nav>
             </div>
             
-            <a href="#" id="cart-icon"></a>
+            <a href="#" class="header__cart-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>        
         </header>
     
-    
-        <div>
-            <div>
-                <h1>RETROCam</h1>
-                <p>This is a subheading about this amazing shop coming soon.</p>
-                <a href="#" class="btn-cta">DÉCOUVRIR</a>
+        <div class="hero-banner">
+            <div class="hero-headings">
+                <h1 class="hero-headings__main-heading">RETROCam</h1>
+                <p class="hero-headings__subheading">This is a subheading about this amazing shop coming soon.</p>
             </div>
-        </div>
-        
-            
-        <div>
-            <main>
-                <section>
 
-                    <div>
-                        <h1>AWESOME HEADING</h1>
-                        <p>Hi guys check this awesome subheading!</p>
+            <a href="#" class="hero-banner__cta btn btn-cta">DÉCOUVRIR</a>
+        </div>       
+            
+        <div class="container">
+            <main>
+                <section class="products-section">
+
+                    <div class="section-headings">
+                        <h1 class="section-headings__title">AWESOME HEADING</h1>
+                        <p class="section-headings__subtitle">Hi guys check this awesome subheading!</p>
                     </div>
 
                     <div>
@@ -50,54 +56,54 @@
                     </div>       
                 </section>
 
-                <section>
-                    <div>
-                        <h2>À propos de nous</h2>
-                    </div>
+                <section class="about-us-section">
+                    
+                    <h2 class="about-us-section__title">À propos de nous</h2>
+                    
                 
-                    <div>
-                        <div>
-                            <img src=""  alt=""/>
-                        </div>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                In ipsum quia numquam debitis, cum eveniet consectetur sequi 
-                                optio odio error velit iusto ullam mollitia tempore tenetur magni 
-                                consequatur fugit facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                In ipsum quia numquam debitis, cum eveniet consectetur sequi 
-                                optio odio error velit iusto ullam mollitia tempore tenetur magni 
-                                consequatur fugit facere.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                In ipsum quia numquam debitis, cum eveniet consectetur sequi 
-                                optio odio error velit iusto ullam mollitia tempore tenetur magni 
-                                consequatur fugit facere.
-                            </p>
-                        </div>
+                    <div class="about-us-content">      
+                        <img class="about-us-content__picture"  src=""  alt=""/>
+                    
+                        <p class="about-us-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In ipsum quia numquam debitis, cum eveniet consectetur sequi 
+                            optio odio error velit iusto ullam mollitia tempore tenetur magni 
+                            consequatur fugit facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In ipsum quia numquam debitis, cum eveniet consectetur sequi 
+                            optio odio error velit iusto ullam mollitia tempore tenetur magni 
+                            consequatur fugit facere.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In ipsum quia numquam debitis, cum eveniet consectetur sequi 
+                            optio odio error velit iusto ullam mollitia tempore tenetur magni 
+                            consequatur fugit facere.
+                        </p>  
                     </div>
                 </section>
             </main>
         </div>
            
             <footer>
-                <nav>     
+                <nav class="footer-nav">     
                     <ul>
-                        <li><a href="#">Catalogue</a></li>
-                        <li><a href="#">F.A.Q.</a></li>
-                        <li><a href="#">Contactez-nous</a></li>
+                        <li class="footer-nav__item"><a href="#">Catalogue</a></li>
+                        <li class="footer-nav__item"><a href="#">F.A.Q.</a></li>
+                        <li class="footer-nav__item"><a href="#">Contactez-nous</a></li>
                     </ul>      
                     
                     <ul>
-                        <li><a href="#">C.G.V.</a></li>
-                        <li><a href="#">Mentions Légales</a></li>
-                        <li><a href="#">Politique de Confidentalité</a></li>
+                        <li class="footer-nav__item"><a href="#">C.G.V.</a></li>
+                        <li class="footer-nav__item"><a href="#">Mentions Légales</a></li>
+                        <li class="footer-nav__item"><a href="#">Politique de Confidentalité</a></li>
                     </ul>      
                 </nav>
-                <div>
-                    <a href="#"> </a>
-                    <a href="#"> </a>
-                    <a href="#"> </a>
-                    <a href="#"> </a>
+                <div class="footer-social">
+                    <a class="footer-social__item" href="#"><i class="fab fa-instagram p-3"></i></a>
+                    <a class="footer-social__item" href="#"><i class="fab fa-pinterest p-3"></i></a>
+                    <a class="footer-social__item" href="#"><i class="fab fa-facebook p-3"></i></a>
+                    <a class="footer-social__item" href="#"><i class="fab fa-twitter p-3"></i></a>
                 </div>     
             </footer>
-        
+        <!-- Bootstap's JS Scripts | jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>
