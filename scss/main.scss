@@ -1,17 +1,45 @@
-/* HEADER  */
+body {
+    overflow-x: hidden;
+}
 
-header {
-    background-color: rgba(245, 245, 245, 1);
-    border-bottom: 1px solid #000;
-    .header-brand__logo {
-        font-family: 'Old Standard TT', serif;
-        font-size: 2rem;
-    }
-
+nav {
     ul {
         list-style: none;
         padding-left: 0 !important;
         margin-bottom: 0 !important;
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'Old Standard TT', serif;
+} 
+
+
+p {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+header a, footer a {
+    color: #000 !important;
+    transition: 150ms ease-in-out;
+    text-decoration: none !important;
+    font-weight: 600;
+    
+}
+
+header a:hover, footer a:hover {
+    color: #4A8979 !important;
+    text-decoration: none;
+}
+
+/* HEADER  */
+
+header {
+    background-color: rgba(245, 245, 245, 1);
+    border-bottom: 3px solid #000;
+    .header-brand__logo {
+        font-family: 'Old Standard TT', serif;
+        font-size: 2rem;
     }
 
     .header__cart-icon {
@@ -51,16 +79,28 @@ header {
 
 /* ABOUT US */
 
-.about-us-section {
-    &__title {
-        padding-right: 30px;
+
+// .about-us-content {
+//     &__picture {
+//         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+//     }
+// }
+
+/* FOOTER */
+
+footer {
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    background-color: whitesmoke;
+}
+
+.footer-social {
+    &__item {
+        transition: 150ms ease-in-out;
+        font-size: 2.2rem;
+        &:hover {
+            color: #4A8979 !important;
+        }
     }
 }
 
-.about-us-content {
-    &__picture {
-        border: 1px solid #000;
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-    }
-}
