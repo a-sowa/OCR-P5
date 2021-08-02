@@ -1,3 +1,5 @@
+/* HEADER  */
+
 header {
     background-color: rgba(245, 245, 245, 1);
     border-bottom: 1px solid #000;
@@ -14,5 +16,51 @@ header {
 
     .header__cart-icon {
         font-size: 1.5rem;
+    }
+}
+
+/* HERO  */
+
+.hero-banner {
+    background: center no-repeat url("/img/hero-banner-min.jpg");
+    height: 800px;
+    background-size: cover;
+}
+
+.hero-headings {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3rem;
+    width: auto;
+    &__cta {
+        color: #000;
+        background-color: rgba(245, 245, 245, 1);
+        padding: .7rem 2rem;
+        border: 3px solid #000;
+        border-radius: 30px;
+        text-decoration: none !important;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    &__cta:hover {
+        color: whitesmoke;
+        background-color: #4A8979;
+        border-color: #000;
+        text-decoration: none;
+    }
+}
+
+/* ABOUT US */
+
+.about-us-section {
+    &__title {
+        padding-right: 30px;
+    }
+}
+
+.about-us-content {
+    &__picture {
+        border: 1px solid #000;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
     }
 }
