@@ -92,4 +92,29 @@ footer {
 .footer-social__item:hover {
   color: #4A8979 !important;
 }
+
+.btn-add-to-cart {
+  background-color: black !important;
+  color: white !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  font-weight: 600 !important;
+  border: 2px solid black !important;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #4A8979 !important;
+  color: black !important;
+}
+
+.product-img {
+  width: 480px;
+  height: 480px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.reset-row-padding {
+  padding-top: 30px !important;
+}
 /*# sourceMappingURL=main.css.map */
