@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="./css/main.css"/>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script src="https://kit.fontawesome.com/e2a6ae481a.js" crossorigin="anonymous"></script>
+        <title>RETROCam - Accueil</title>
+    </head>
+
+    <body>
+        <header class="d-flex flex-row justify-content-between align-items-center px-3 py-2 py-sm-3 px-md-4  ">
+            <div class="header-brand d-flex flex-row align-items-center">
+                <a href="index.html" class="header-brand__logo">
+                    RETROCam
+                </a>
+
+                <nav class="nav-menu d-none d-lg-flex pl-3">     
+                    <ul class="d-flex flex-row">
+                        <li class="nav-menu__item nav-link"><a href="#">Accueil</a></li>
+                        <li class="nav-menu__item nav-link"><a href="#">Catalogue</a></li>
+                        <li class="nav-menu__item nav-link"><a href="#">F.A.Q.</a></li>
+                        <li class="nav-menu__item nav-link"><a href="#">Contactez-nous</a></li>
+                    </ul>      
+                </nav>
+            </div>
+            
+            <a href="#" class="header__cart-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>        
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="product-page row reset-row-padding px-3">
+                   
+                    <div class="col-12 col-lg-6 col-img-product">
+                        <img src="./img/cameras-min.jpg" class="img-fluid  product-img" alt="...">
+                    </div>
+                    
+                    <div class="col-12 col-lg-6 p-3 d-flex flex-column justify-content-around">
+                        
+                        <div>
+                            <h1 class="">Product Title</h1>
+                            <div class="price ">00,00€</div>
+                        </div>
+                       
+
+                        <div>
+                            <div class="quantity-selector pt-3 d-flex flex-row">
+                                <label for="product-quantity" class="mr-3">Quantité :</label>
+                                <input type="number" id="product-quantity" name="product-quantity" min="1" max="100">
+                            </div>
+
+                            <div class="option-selector  py-3">
+                                <label for="lense-choice" class="mr-3">Product option :</label>
+                                <input list="lenses" id="lense-choice" name="lense-choice" />
+
+                                <datalist id="lenses">
+                                    <option value="35mm 1.4">
+                                    <option value="50mm 1.6">
+                                </datalist>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-add-to-cart  py-2 px-5 ">AJOUTER AU PANIER</a>
+                    </div>
+                </div>
+                <div class="row px-3 pb-5">
+
+                    <div class="col d-none d-md-block col-lg-6"></div>
+
+                    <div class=" col-12 col-lg-6 product-description pt-3">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ad et perferendis, 
+                            rem officiis ipsum dignissimos cum veritatis
+                                vel consectetur praesentium qui, cupiditate exercitationem aliquid obcaecati quia sunt. 
+                                Assumenda, aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit blanditiis 
+                                ea beatae a quos iste quae error quibusdam ipsum soluta! Dolorum suscipit adipisci hic repudiandae 
+                                optio iure totam quidem voluptatibus.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ad et perferendis, 
+                            rem officiis ipsum dignissimos cum veritatis
+                                vel consectetur praesentium qui, cupiditate exercitationem aliquid obcaecati quia sunt. 
+                                Assumenda, aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit blanditiis 
+                                ea beatae a quos iste quae error quibusdam ipsum soluta! Dolorum suscipit adipisci hic repudiandae 
+                                optio iure totam quidem voluptatibus.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ad et perferendis, 
+                            rem officiis ipsum dignissimos cum veritatis
+                                vel consectetur praesentium qui, cupiditate exercitationem aliquid obcaecati quia sunt. 
+                                Assumenda, aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit blanditiis 
+                                ea beatae a quos iste quae error quibusdam ipsum soluta! Dolorum suscipit adipisci hic repudiandae 
+                                optio iure totam quidem voluptatibus.
+                        </p>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="container-fluid">
+            <nav class="footer-nav row justify-content-center align-items-center">     
+                <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mb-3 mb-sm-0 mt-5">
+                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Catalogue</a></li>
+                    <li class="footer-nav__item mx-auto mb-3"><a href="#">F.A.Q.</a></li>
+                    <li class="footer-nav__item mx-auto mb-sm-3"><a href="#">Contactez-nous</a></li>
+                </ul>      
+                
+                <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mt-5">
+                    <li class="footer-nav__item mx-auto mb-3"><a href="#">C.G.V.</a></li>
+                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Mentions Légales</a></li>
+                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Politique de Confidentalité</a></li>
+                </ul>      
+            </nav>
+            <div class="footer-social row justify-content-center py-5 py-sm-4 py-md-3">
+                <a class="footer-social__item" href="#"><i class="fab fa-instagram p-3"></i></a>
+                <a class="footer-social__item" href="#"><i class="fab fa-pinterest p-3"></i></a>
+                <a class="footer-social__item" href="#"><i class="fab fa-facebook p-3"></i></a>
+                <a class="footer-social__item" href="#"><i class="fab fa-twitter p-3"></i></a>
+            </div>     
+        </footer>
+
+    <script src='./js/product.js'></script>
+    <!-- Bootstap's JS Scripts | jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html> 
