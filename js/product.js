@@ -93,17 +93,22 @@
 //     });
 
 
-const apiUrl = 'http://localhost:3000/api/cameras';
+
+
+// let cart = [];
+
+// let jsonStr = JSON.stringify(cart);
+// localStorage.setItem("cart", jsonStr);
+
 
 class cartItem {
-    constructor(name, option, price,) {
+    constructor(name, option, price, qty) {
         this.name = name;
         this.option = option;
         this.price = price;
+        this.qty = qty;
     }
 }
-
-let cart = [];
 
 let cartParsed = JSON.parse(localStorage.getItem("cart"));
 
@@ -112,8 +117,7 @@ function pushToLocalstorage(productToPush) {
     localStorage.setItem("cart", JSON.stringify(cartParsed));
 };
 
-// let jsonStr = JSON.stringify(cart);
-// localStorage.setItem("cart", jsonStr);
+const apiUrl = 'http://localhost:3000/api/cameras';
 
 let getAPI = async () => {
     products = await fetch(apiUrl)
@@ -212,14 +216,17 @@ const displayProduct = async() => {
     append(main, productContainer);
     
     const addToCartBtn = document.getElementById("addToCartBtn");
-
     addToCartBtn.addEventListener('click', async (event) => {
         event.preventDefault();
         await getAPI();
         let product = products.filter(product => product._id === getURLParams());
-        let selectedProduct = new cartItem(product[0].name, product[0].lenses[0], product[0].price);
+        let selectedQty = Number(document.getElementById("product-quantity").value);
+        let selectedProduct = new cartItem(product[0].name, product[0].lenses[0], product[0].price, selectedQty);
         pushToLocalstorage(selectedProduct);
-    });
+        console.log(selectedQty);
+        console.log(localStorage);
+        console.log(cartParsed);
+        });
 
     const displayProductOption = async () => {
         await getAPI();
@@ -236,7 +243,3 @@ const displayProduct = async() => {
 };
 
 displayProduct();
-
-
-
-
