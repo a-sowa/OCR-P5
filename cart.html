@@ -10,6 +10,9 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
             crossorigin="anonymous"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/e2a6ae481a.js" crossorigin="anonymous"></script>
         <title>RETROCam - Accueil</title>
     </head>
@@ -31,33 +34,64 @@
                 </nav>
             </div>
             
-            <a href="#" class="header__cart-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>        
+            <a href="cart.html" class="header__cart-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>        
         </header>
 
         <main>
-            
+            <div class="container p-4">
+
+                <div class="row p-3 d-flex flex-column">
+                    <h1>Panier</h1>
+                    <div class="hr"></div>
+                </div>
+
+                <div class="cart-content row px-3" id="cart-content">
+                    
+                </div>
+                <div class="hr"></div>
+                <div class="row">
+                    <div class="col-12 col-md-3">
+
+                    </div>
+                    <div class="col-12 px-5 col-md-9 d-md-flex flex-md-row justify-content-md-around px-md-0">
+                        <div class="d-flex flex-row align-items-center justify-content-between py-2 flex-md-column align-items-md-between justify-content-md-center px-md-0">
+
+                        </div>
+                        <div class="d-flex flex-row align-items-center justify-content-between py-2 flex-md-column align-items-md-between justify-content-md-center px-md-0">
+
+                        </div>
+                        <div class="d-flex flex-column  justify-content-between py-2 px-md-0 pt-md-5">
+                            <h3 class="d-flex flex-row justify-content-between mb-5 mb-md-3">Montant total :<span><p>345€</p></span></h3>
+                            <button type="submit" class="btn btn-add-to-cart">ÉTAPE SUIVANTE</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </main>
 
-        <footer class="container-fluid">
-            <nav class="footer-nav row justify-content-center align-items-center">     
-                <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mb-3 mb-sm-0 mt-5">
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Catalogue</a></li>
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">F.A.Q.</a></li>
-                    <li class="footer-nav__item mx-auto mb-sm-3"><a href="#">Contactez-nous</a></li>
-                </ul>      
-                
-                <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mt-5">
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">C.G.V.</a></li>
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Mentions Légales</a></li>
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Politique de Confidentalité</a></li>
-                </ul>      
-            </nav>
-            <div class="footer-social row justify-content-center py-5 py-sm-4 py-md-3">
-                <a class="footer-social__item" href="#"><i class="fab fa-instagram p-3"></i></a>
-                <a class="footer-social__item" href="#"><i class="fab fa-pinterest p-3"></i></a>
-                <a class="footer-social__item" href="#"><i class="fab fa-facebook p-3"></i></a>
-                <a class="footer-social__item" href="#"><i class="fab fa-twitter p-3"></i></a>
-            </div>     
+        <footer class="container-fluid p-5">
+            <div class="border border-dark">
+                <nav class="footer-nav row justify-content-center align-items-center">     
+                    <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mb-3 mb-sm-0 mt-5">
+                        <li class="footer-nav__item mx-auto mb-3"><a href="#">Catalogue</a></li>
+                        <li class="footer-nav__item mx-auto mb-3"><a href="#">F.A.Q.</a></li>
+                        <li class="footer-nav__item mx-auto mb-sm-3"><a href="#">Contactez-nous</a></li>
+                    </ul>      
+                    
+                    <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mt-5">
+                        <li class="footer-nav__item mx-auto mb-3"><a href="#">C.G.V.</a></li>
+                        <li class="footer-nav__item mx-auto mb-3"><a href="#">Mentions Légales</a></li>
+                        <li class="footer-nav__item mx-auto mb-3"><a href="#">Politique de Confidentalité</a></li>
+                    </ul>      
+                </nav>
+                <div class="footer-social row justify-content-center py-5 py-sm-4 py-md-3">
+                    <a class="footer-social__item" href="#"><i class="fab fa-instagram p-3"></i></a>
+                    <a class="footer-social__item" href="#"><i class="fab fa-pinterest p-3"></i></a>
+                    <a class="footer-social__item" href="#"><i class="fab fa-facebook p-3"></i></a>
+                    <a class="footer-social__item" href="#"><i class="fab fa-twitter p-3"></i></a>
+                </div>    
+            </div> 
         </footer>
 
     <script src='./js/cart.js'></script>
