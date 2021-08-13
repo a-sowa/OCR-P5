@@ -8,8 +8,10 @@ nav ul {
   margin-bottom: 0 !important;
 }
 
-h1, h2, h3 {
-  font-family: 'Old Standard TT', serif;
+h1, h2, h3, h4, h5, h6, #cart-qty-label {
+  font-family: 'Courier New', serif;
+  font-weight: 600 !important;
+  font-size: 20px;
 }
 
 p {
@@ -31,13 +33,13 @@ header a:hover, footer a:hover {
 
 /* HEADER  */
 header {
-  background-color: whitesmoke;
-  border-bottom: 3px solid #000;
+  background-color: white;
+  border-bottom: 2px solid #000;
 }
 
 header .header-brand__logo {
-  font-family: 'Old Standard TT', serif;
-  font-size: 2rem;
+  font-family: 'Courier New', serif;
+  font-size: 2.4rem;
 }
 
 header .header__cart-icon {
@@ -77,12 +79,6 @@ header .header__cart-icon {
 
 /* ABOUT US */
 /* FOOTER */
-footer {
-  border-top: 3px solid #000;
-  border-bottom: 3px solid #000;
-  background-color: whitesmoke;
-}
-
 .footer-social__item {
   -webkit-transition: 150ms ease-in-out;
   transition: 150ms ease-in-out;
@@ -94,17 +90,18 @@ footer {
 }
 
 .btn-add-to-cart {
-  background-color: black !important;
-  color: white !important;
+  background-color: white !important;
+  color: black !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
   font-weight: 600 !important;
-  border: 2px solid black !important;
+  border: 1px solid black !important;
+  border-radius: 0 !important;
 }
 
 .btn-add-to-cart:hover {
-  background-color: #4A8979 !important;
-  color: black !important;
+  background-color: black !important;
+  color: white !important;
 }
 
 .product-img {
@@ -116,5 +113,36 @@ footer {
 
 .reset-row-padding {
   padding-top: 30px !important;
+}
+
+.hr {
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+.cart-content .article {
+  padding: 20px;
+}
+
+.cart-content .article p {
+  margin: 0px !important;
+}
+
+.product-img-cart {
+  max-width: 50%;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .cart-price, .total-price {
+    min-height: 30px;
+  }
+  .product-img-cart {
+    max-width: 100%;
+    height: auto;
+  }
+  .cart-item-prices h5 {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
