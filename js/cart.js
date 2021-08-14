@@ -22,7 +22,23 @@ function append(parent, el) {
 // ---------------------------------------------
 
 let cartParsed = JSON.parse(localStorage.getItem("cart"));
+console.log(localStorage);
+console.log(cartParsed);
 
+// let qtyParsed = parseFloat(cartParsed[i].qty);
+
+// -----------------------TOTAL PRICES CALCULATION------------------------
+
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+const totalPricePerItem = cartParsed.map(el => el.price * el.qty);
+const cartTotalPrice = totalPricePerItem.reduce(reducer);
+const parsedCartTotalPrice = cartTotalPrice.toFixed(2).replace('.', ',')
+let totalAmountContainer = document.getElementById('total-amount');
+let totalAmount = createNodeWithClasses('p', 'cart-total-amount');
+totalAmount.textContent = `${parsedCartTotalPrice} €`;
+append(totalAmountContainer, totalAmount);
+
+// -------------------------------------------------------------------------
 
 
 // --------------------------------DISPLAY CART CONTENT--------------------------------
