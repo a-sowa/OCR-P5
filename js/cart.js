@@ -40,6 +40,20 @@ append(totalAmountContainer, totalAmount);
 
 // -------------------------------------------------------------------------
 
+// --------------------------------EMPTY CART-------------------------------- 
+
+const clearCart = () => {
+    localStorage.removeItem('cart');
+    window.location.reload();
+    console.log(localStorage);
+}
+
+let emptyCartBtn = document.getElementById('empty-cart');
+
+emptyCartBtn.addEventListener('click', () => clearCart());
+
+// ----------------------------------------------------------------
+
 
 // --------------------------------DISPLAY CART CONTENT--------------------------------
 
@@ -84,16 +98,28 @@ const getCart = async () => {
             </div>`
 
         append(cartContainer, cartItem);
+
+
+        const inputProductQty = document.getElementById('product-quantity');
+
+        console.log(inputProductQty);
+
+        function updateValue() {
+            let productQtyValue = Number(inputProductQty.value);
+            console.log(productQtyValue);
+            console.log(cart);
+
+        }
+
+        inputProductQty.addEventListener('change', updateValue);
+        
     }
 
 }
 getCart();
 // ------------------------------------------------------------------------------------------------
 
-// const input = document.querySelector('input');
-// const log = document.getElementById('log');
-// input.addEventListener('change', updateValue);
 
-// function updateValue(e) {
-//     log.textContent = e.target.value;
-// }
+
+
+
