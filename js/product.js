@@ -7,7 +7,8 @@ console.log(localStorage);
 
 
 class cartItem {
-    constructor(name, option, price, qty, img) {
+    constructor(id, name, option, price, qty, img) {
+        this.id = id;
         this.name = name;
         this.option = option;
         this.price = price;
@@ -21,8 +22,8 @@ let cartParsed = JSON.parse(localStorage.getItem("cart"));
 let cart = [];
 
 function pushToLocalstorage(productToPush) {
-    cart.push(productToPush);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    cartParsed.push(productToPush);
+    localStorage.setItem("cart", JSON.stringify(cartParsed));
 };
 
 const apiUrl = 'http://localhost:3000/api/cameras';
@@ -128,12 +129,26 @@ const displayProduct = async() => {
     addToCartBtn.addEventListener('click', async (event) => {
         event.preventDefault();
         await getAPI();
+        if (cartParsed === null) {
+            cartParsed = [];
+        };
         let product = products.filter(product => product._id === getURLParams());
-        let selectedQty = Number(document.getElementById("product-quantity").value);
         let imgProduct = product[0].imageUrl;
-        let selectedProduct = new cartItem(product[0].name, product[0].lenses[0], numberPrice, selectedQty, imgProduct);
-        pushToLocalstorage(selectedProduct);
-        });
+        let selectedQty = Number(document.getElementById("product-quantity").value);
+        let selectedLense = document.getElementById('option-select').value;
+        let selectedProduct = new cartItem(product[0]._id, product[0].name, selectedLense, numberPrice, selectedQty, imgProduct);
+        let itemIsInCart = cartParsed.find(cartParsed => cartParsed["id"] == selectedProduct._id || cartParsed["option"] == selectedProduct.option);
+        if (itemIsInCart) {
+            console.log(cartParsed);
+            itemIsInCart.qty++;
+            console.log(cartParsed);
+        } else {
+            cartParsed.push(selectedProduct);
+            console.log(cartParsed);
+        };
+        localStorage.setItem("cart", JSON.stringify(cartParsed));
+        console.log(localStorage);
+    });
 
     const displayProductOption = async () => {
         await getAPI();
