@@ -4,68 +4,93 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="./css/main.css"/>
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-            crossorigin="anonymous"
-        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <script src="https://kit.fontawesome.com/e2a6ae481a.js" crossorigin="anonymous"></script>
+
         <title>RETROCam - Accueil</title>
     </head>
 
     <body>
-        <header class="d-flex flex-row justify-content-between align-items-center px-3 py-2 py-sm-3 px-md-4  ">
-            <div class="header-brand d-flex flex-row align-items-center">
-                <a href="index.html" class="header-brand__logo">
-                    RETROCam
-                </a>
-
-                <nav class="nav-menu d-none d-lg-flex pl-3">     
-                    <ul class="d-flex flex-row">
-                        <li class="nav-menu__item nav-link"><a href="#">Accueil</a></li>
-                        <li class="nav-menu__item nav-link"><a href="#">Catalogue</a></li>
-                        <li class="nav-menu__item nav-link"><a href="#">F.A.Q.</a></li>
-                        <li class="nav-menu__item nav-link"><a href="#">Contactez-nous</a></li>
-                    </ul>      
-                </nav>
-            </div>
-            
-            <a href="cart.html" class="header__cart-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>        
+        <header>
+          
         </header>
 
         <main>
+            <div class="container product-page">
+                <div class="product-page-row"></div> 
+                    <div class="product-page__img product-page-column">
+                        <img src="" class="product-img" id="productImg" alt="...">
+                    </div>
+                    
+                    <div class="product-page__infos product-page-column">
+                        
+                        <div class="product-headings">
+                            <h1 class="product-name" id="productName"></h1>
+                            <div class="product-price" id="productPrice"></div>
+                        </div>
+                        
 
-            <!-- PRODUCT PAGE DISPLAYED BY JS/PRODUCT.JS -->
+                        <div class="product-option">
+                            <div class="quantity-selector">
+                                <label for="quantity-selector" class="">Quantité :</label>
+                                <input type="number" id="qtySelector" name="quantity-selector" value="1" min="1" max="100">
+                            </div>
 
-        </main>
+                            <div class="option-selector">
+                                <label for="option-selector">Objectif :</label>
 
-        <footer class="container-fluid">
-            <nav class="footer-nav row justify-content-center align-items-center">     
-                <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mb-3 mb-sm-0 mt-5">
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Catalogue</a></li>
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">F.A.Q.</a></li>
-                    <li class="footer-nav__item mx-auto mb-sm-3"><a href="#">Contactez-nous</a></li>
-                </ul>      
-                
-                <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mt-5">
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">C.G.V.</a></li>
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Mentions Légales</a></li>
-                    <li class="footer-nav__item mx-auto mb-3"><a href="#">Politique de Confidentalité</a></li>
-                </ul>      
-            </nav>
-            <div class="footer-social row justify-content-center py-5 py-sm-4 py-md-3">
-                <a class="footer-social__item" href="#"><i class="fab fa-instagram p-3"></i></a>
-                <a class="footer-social__item" href="#"><i class="fab fa-pinterest p-3"></i></a>
-                <a class="footer-social__item" href="#"><i class="fab fa-facebook p-3"></i></a>
-                <a class="footer-social__item" href="#"><i class="fab fa-twitter p-3"></i></a>
-            </div>     
+                                <select name="option-selector" id="optionSelector">
+                                
+                                </select>
+                            </div>
+                        </div>
+
+                        <a href="#" id="addToCartBtn" class="btn btn-add-to-cart">AJOUTER AU PANIER</a>
+                    </div>
+                </div>
+
+                <div class="product-page-row">
+
+                    <div class="product-page-column">
+                        <!-- ! EMPTY ! IT'S JUST FOR GRID STYLE -->
+                    </div>
+
+                    <div class="product-page__description product-page-column">
+                        <p class="product-description" id="productDescription"></p>
+                        
+                        <br>
+                        <span class="">_____________</span>
+                        <br>
+
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        In ipsum quia numquam debitis, cum eveniet consectetur sequi 
+                        optio odio error velit iusto ullam mollitia tempore tenetur magni 
+                        consequatur fugit facere. 
+                        <br><br>
+                        
+
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        In ipsum quia numquam debitis, cum eveniet consectetur sequi 
+                        optio odio error velit iusto ullam mollitia tempore tenetur magni 
+                        consequatur fugit facere.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        In ipsum quia numquam debitis, cum eveniet consectetur sequi 
+                        optio odio error velit iusto ullam mollitia tempore tenetur magni 
+                        consequatur fugit facere.
+                    </div>
+                </div>
+            </div>
+        </main>  
+
+        <footer>
+
         </footer>
-
-    <script src='./js/product.js'></script>
-    <!-- Bootstap's JS Scripts | jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <script src='./js/display.js' async></script>
+        <script src="./js/functions.js"></script>
+        <script src='./js/product.js' async></script>
     </body>
-</html> 
+</html>
