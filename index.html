@@ -4,109 +4,77 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="./css/main.css"/>
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-            crossorigin="anonymous"
-        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <script src="https://kit.fontawesome.com/e2a6ae481a.js" crossorigin="anonymous"></script>
+
         <title>RETROCam - Accueil</title>
     </head>
 
     <body>
-        <header class="d-flex flex-row justify-content-between align-items-center px-3 py-2 py-sm-3 px-md-4  ">
-            <div class="header-brand d-flex flex-row align-items-center">
-                <a href="index.html" class="header-brand__logo">
-                    RETROCam
-                </a>
+        <header>
 
-                <nav class="nav-menu d-none d-lg-flex pl-3">     
-                    <ul class="d-flex flex-row">
-                        <li class="nav-menu__item nav-link"><a href="#">Accueil</a></li>
-                        <li class="nav-menu__item nav-link"><a href="#">Catalogue</a></li>
-                        <li class="nav-menu__item nav-link"><a href="#">F.A.Q.</a></li>
-                        <li class="nav-menu__item nav-link"><a href="#">Contactez-nous</a></li>
-                    </ul>      
-                </nav>
-            </div>
+            <!-- ----------DISPLAYED BY DISPLAY.JS---------- -->
             
-            <a href="#" class="header__cart-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>        
         </header>
-    
-        <div class="hero-banner row d-flex flex-column justify-content-center align-items-center">
-            <div class="hero-headings text-center text-white">
-                <h1 class="hero-headings__main-heading">RETROCam</h1>
-                <p class="hero-headings__subheading w-auto pb-3">This is a subheading about this amazing shop coming soon.</p>
-                <a href="#main-content" class="hero-headings__cta btn-cta">DÉCOUVRIR</a>
+
+        <main>
+            <div class="hero-banner">
+                <div class="hero-headings">
+                    <h1 class="hero-headings__heading">RETROCam</h1>
+                    <p class="hero-headings__subheading">This is a subheading about this amazing shop coming soon.</p>
+                    <a class="hero-headings__cta" href="#">DÉCOUVRIR</a>
+                </div>
             </div>
 
-        </div>       
-            
-        <div class="container" id="main-content">
-            <main>
-                <section class="products-section">
-
-                    <div class="section-headings row mt-5 d-flex flex-column align-items-center">
-                        <h2 class="section-headings__title">AWESOME HEADING</h1>
-                        <p class="section-headings__subtitle">Hi guys check this awesome subheading!</p>
+            <div class="container">
+                <section class="product-section">
+                    <div class="section-headings">
+                        <h2 class="section-headings__heading">AWESOME HEADING</h2>
+                        <p class="section-headings__subheading">Hi guys check this awesome subheading!</p>
                     </div>
 
-                    <div class="row mt-5" id="products-rows">
-                       
-                    </div>       
+                    <div class="products-grid" id="products-grid">
+
+                        <!-- ----------DISPLAYED BY INDEX.JS---------- -->
+
+                    </div>
                 </section>
 
-                <section class="about-us-section mb-5">
-                    
-                    <h2 class="about-us-section__title row my-5 pl-3 justify-content-center">À PROPOS DE NOUS</h2>
-                    
-                
-                    <div class="about-us-content row mx-3">      
-                        <img class="about-us-content__picture col-12 col-lg-6 mb-4 img-fluid" src="./img/cameras-min.jpg"  alt=""/>
-                    
-                        <p class="about-us-content__text col-12 col-lg-6 align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                <section class="about_us-section">
+                    <div class="section-headings">
+                        <h2 class="section-headings__heading">À PROPOS DE NOUS</h2>
+                    </div>
+
+                    <div class="about_us-content">
+                        <img class="about_us-content__img" src="./img/cameras-min.jpg" alt="">
+                        <p class="about_us-content__txt">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             In ipsum quia numquam debitis, cum eveniet consectetur sequi 
                             optio odio error velit iusto ullam mollitia tempore tenetur magni 
                             consequatur fugit facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             In ipsum quia numquam debitis, cum eveniet consectetur sequi 
                             optio odio error velit iusto ullam mollitia tempore tenetur magni 
                             consequatur fugit facere.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            In ipsum quia numquam debitis, cum eveniet consectetur sequi 
-                            optio odio error velit iusto ullam mollitia tempore tenetur magni 
-                            consequatur fugit facere.
-                        </p>  
+                        </p>
                     </div>
                 </section>
-            </main>
-        </div>
-           
-            <footer class="container-fluid">
-                <nav class="footer-nav row justify-content-center align-items-center">     
-                    <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mb-3 mb-sm-0 mt-5">
-                        <li class="footer-nav__item mx-auto mb-3"><a href="#">Catalogue</a></li>
-                        <li class="footer-nav__item mx-auto mb-3"><a href="#">F.A.Q.</a></li>
-                        <li class="footer-nav__item mx-auto mb-sm-3"><a href="#">Contactez-nous</a></li>
-                    </ul>      
-                    
-                    <ul class="col-12 col-sm-6 d-flex flex-column align-items-center mt-5">
-                        <li class="footer-nav__item mx-auto mb-3"><a href="#">C.G.V.</a></li>
-                        <li class="footer-nav__item mx-auto mb-3"><a href="#">Mentions Légales</a></li>
-                        <li class="footer-nav__item mx-auto mb-3"><a href="#">Politique de Confidentalité</a></li>
-                    </ul>      
-                </nav>
-                <div class="footer-social row justify-content-center py-5 py-sm-4 py-md-3">
-                    <a class="footer-social__item" href="#"><i class="fab fa-instagram p-3"></i></a>
-                    <a class="footer-social__item" href="#"><i class="fab fa-pinterest p-3"></i></a>
-                    <a class="footer-social__item" href="#"><i class="fab fa-facebook p-3"></i></a>
-                    <a class="footer-social__item" href="#"><i class="fab fa-twitter p-3"></i></a>
-                </div>     
+            </div>
+        </main>  
+
+            <footer>
+                
+                <!-- ----------DISPLAYED BY DISPLAY.JS---------- -->
+            
             </footer>
 
-        <script src='./js/script.js'></script>
-        <!-- Bootstap's JS Scripts | jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        
+        <script src='./js/display.js' async></script>
+        <script src="./js/functions.js"></script>
+        <script src='./js/index.js' async></script>
     </body>
 </html>
