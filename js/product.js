@@ -18,6 +18,21 @@ let productDescription = document.getElementById('productDescription');
 let qtySelector = document.getElementById("qtySelector");
 let optionSelector = document.getElementById("optionSelector");
 let addToCartBtn = document.getElementById("addToCartBtn");
+
+// ----------- BUG SAFARI -----------
+
+// const getCartLocalStorage = () => {
+//     if (cart === null) {
+//         return cart = [];
+//     } else {
+//         return cart = JSON.parse(localStorage.getItem("cart"));
+//     }
+// }
+
+// let cart = getCartLocalStorage();
+
+// --------------------------------------------
+
 let cart = JSON.parse(localStorage.getItem("cart"));
 
 
@@ -48,9 +63,7 @@ const displayProductNew = async() => {
         let selectedLense = optionSelector.value;
         let selectedProduct = new cartItem(product[0]._id, product[0].name, selectedLense, correctingApiPrices(67789), selectedQty, imgProduct);
         let itemIsInCart = cart.find(cart => cart["id"] == selectedProduct._id || cart["option"] == selectedProduct.option);
-        if (cart === null) {
-            cart = [];
-        };
+        
         if (itemIsInCart) {
             console.log(cart);
             itemIsInCart.qty++;
@@ -66,4 +79,4 @@ const displayProductNew = async() => {
 
 displayProductNew();
 
-// localStorage.clear();
+ localStorage.clear();

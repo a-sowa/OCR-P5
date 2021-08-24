@@ -1,3 +1,5 @@
+// ---------- REMPLACER innerHTML POUR <template> ----------
+
 const displayHeader = () => {
     let headerTag = document.querySelector('header');
     headerTag.innerHTML = 
