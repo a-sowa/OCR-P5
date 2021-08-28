@@ -10,7 +10,6 @@ class cartItem {
         this.img = img;
     }
 }
-
 let productImg = document.getElementById('productImg');
 let productName = document.getElementById('productName');
 let productPrice = document.getElementById('productPrice');
@@ -49,9 +48,9 @@ const displayProductNew = async() => {
         let imgProduct = product[0].imageUrl;
         let selectedQty = Number(qtySelector.value);
         let selectedLense = optionSelector.value;
-        let selectedProduct = new cartItem(product[0]._id, product[0].name, selectedLense, correctingApiPrices(67789), selectedQty, imgProduct);
+        let selectedProduct = new cartItem(product[0]._id, product[0].name, selectedLense, correctingApiPrices(product[0].price), selectedQty, imgProduct);
         let itemIsInCart = cart.find(cart => cart["id"] == selectedProduct._id || cart["option"] == selectedProduct.option);
-
+        
         if (itemIsInCart) {
             console.log(cart);
             itemIsInCart.qty++;
