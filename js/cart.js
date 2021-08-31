@@ -64,7 +64,7 @@ const getCart = async () => {
                     <div class="product-details">
                         <h5 class="product-name">${cart[i].name}</h5>
                         <p class="product-option">${cart[i].option}</p>
-                        <button class="remove-product" id="removeItemBtn">Supprimer<button>
+                        <button class="remove-product remove-product-mobile" id="removeItemBtn">Supprimer</button>
                     </div>
                 </div>
 
@@ -72,7 +72,7 @@ const getCart = async () => {
                 <div class="cart-item-prices">
                     <div class="product-price">
                         <h5 class="price-title">Prix</h4>
-                        <p class="cart-price">${stringPrice} €</span> </p>
+                        <p class="cart-price"><span>${stringPrice} €</span> </p>
                     </div>
 
                     <div class="quantity-selector">
@@ -85,6 +85,7 @@ const getCart = async () => {
                         <h5 class="total-price-title">Prix Total</h4>
                         <p class="total-price"><span class="">${itemTotalPrice} €</span></p>
                     </div>
+                    <button class="remove-product remove-product-desktop" id="removeItemBtn">Supprimer</button>
                 </div>`
 
             cartContainer.append(cartItemTemplate);
@@ -126,3 +127,7 @@ const getCart = async () => {
 
 
 getCart();
+
+// ------------------------------------------------------------------------------------------------
+
+

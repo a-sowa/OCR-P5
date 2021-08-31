@@ -465,16 +465,91 @@ footer {
   margin: 8px 0;
 }
 
+.remove-product-desktop {
+  background-color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  display: none;
+  cursor: pointer;
+}
+
+.remove-product-desktop:hover {
+  color: gray;
+}
+
 @media screen and (min-width: 768px) {
-  .cart-price, .total-price {
-    min-height: 30px;
-  }
   .product-img-cart {
     max-width: 100%;
     height: auto;
   }
+  .cart-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .input-qty {
+    margin-bottom: 8px;
+  }
   .cart-item-prices h5 {
-    font-size: 1rem;
+    font-size: 1.6rem;
+  }
+  .cart-item-prices {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100%;
+  }
+  .cart-item-prices div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .cart-item-headings {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 30%;
+  }
+  .remove-product-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .remove-product-mobile {
+    display: none;
+  }
+  .cart-price, .total-price {
+    height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
