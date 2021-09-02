@@ -112,17 +112,17 @@ const getCart = async () => {
         });
     }
 
-    let qtySelectorsList = document.getElementsByClassName('input-qty');
-    console.log(qtySelectorsList);
-    qtySelectorsList = Array.from(qtySelectorsList);
-    console.log(qtySelectorsList);
+    // let qtySelectorsList = document.getElementsByClassName('input-qty');
+    // console.log(qtySelectorsList);
+    // qtySelectorsList = Array.from(qtySelectorsList);
+    // console.log(qtySelectorsList);
 
-    for (let input = 0 ; input < qtySelectorsList.length ; input++) {
-        qtySelectorsList[input].addEventListener('change', (event) => {
-            event.preventDefault()
-            console.log('wshmaggle');
-        });
-    }
+    // for (let input = 0 ; input < qtySelectorsList.length ; input++) {
+    //     qtySelectorsList[input].addEventListener('change', (event) => {
+    //         event.preventDefault()
+    //         console.log('wshmaggle');
+    //     });
+    // }
 };
 
 
