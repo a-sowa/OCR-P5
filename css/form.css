@@ -1,0 +1,125 @@
+h2 {
+  font-size: 2.4rem !important;
+}
+
+.form-headings {
+  font-size: 2rem;
+  margin: 12px 0;
+}
+
+.form-billing-address {
+  padding: none !important;
+}
+
+.form-row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.form-col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.form-col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.form-col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.form-col-25,
+.form-col-50,
+.form-col-75 {
+  padding: 0 16px;
+}
+
+.form-container {
+  background-color: #FFF;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid black;
+}
+
+.form-input[type=text], select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-label {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1.2rem;
+}
+
+.cards-label {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.form-icon-container {
+  margin-bottom: 8px;
+  padding: 7px 0;
+  font-size: 37px;
+  text-align: center;
+}
+
+.form-btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.form-btn:hover {
+  background-color: #45a049;
+}
+
+.form-btn {
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: 1px solid black;
+    border-radius: 0;
+  }
+  
+  .form-btn:hover {
+    background-color: white;
+    color: black;
+  }
+
+span.form-price {
+  float: right;
+  color: grey;
+}
+
+  
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .form-row {
+    flex-direction: column;
+  }
+  .form-col-25 {
+    margin-bottom: 20px;
+  }
+}
+

@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="./css/main.css"/>
-        <!-- <link rel="stylesheet" href="./css/form.css"/> -->
+        <link rel="stylesheet" href="./css/form.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -68,80 +68,151 @@
                 <div class="cart-summary" id="cartSummary">
                     
 
-                    <h4 class="">Montant total :<span id="total-amount"></span></h4>
+                    <h4 id="cart-total-amount">
+                        <!-- Montant total :<span id="cart-total-amount">
+
+                        </span> -->
+                    </h4>
 
                     <!-- <a href="#" class="btn btn-add-to-cart btn-empty-cart" id="empty-cart">VIDER LE PANIER</a> -->
 
                         
                 </div>
-                <div class="row" id='orderForm'>
-                    <div class="col-75">
-                      <div class="container">
-                        <form action="/action_page.php">
-                  
-                          <div class="row">
-                            <div class="col-50">
-                              <h3>Billing Address</h3>
-                              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                              <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-                              <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                              <input type="text" id="email" name="email" placeholder="john@example.com">
-                              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                              <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-                              <label for="city"><i class="fa fa-institution"></i> City</label>
-                              <input type="text" id="city" name="city" placeholder="New York">
-                  
-                              <div class="row">
-                                <div class="col-50">
-                                  <label for="state">State</label>
-                                  <input type="text" id="state" name="state" placeholder="NY">
+
+                <!-- <div class="order-form__headings">
+                  <h2>Coordonnées</h2>
+                </div> -->
+                <div class="form-row" id='orderForm'>
+                    <div class="form-col-75">
+                        <div class="form-container">
+                            <form>
+        
+                                <div class="form-row">
+                                    <div class="form-col-50">
+                                        <h3 class="form-headings">Adresse de livraison</h3>
+                                        <label class="form-label shipping-label" for="fname"> Nom Complet</label>
+                                        <input class="form-input shipping-input" type="text" id="fname" name="firstname"
+                                            placeholder="Jean-Michel Michel">
+                                        <label class="form-label" for="email"> Email</label>
+                                        <input class="form-input" type="text" id="email" name="email"
+                                            placeholder="jm-michel@example.com">
+                                        <label class="form-label shipping-label" for="adr"> Adresse</label>
+                                        <input class="form-input shipping-input" type="text" id="location" name="address"
+                                            placeholder="7 Rue Jean Michel Haussmann">
+        
+                                        <div class="form-row">
+        
+                                            <div class="form-col-50">
+                                                <label class="form-label shipping-label" for="adr-line-2">Complément d'adresse</label>
+                                                <input class="form-input shipping-input" type="text" name="state"
+                                                    placeholder="Bâtiment, résidence, appartement, code d'accès...">
+                                            </div>
+        
+                                            <div class="form-col-50">
+                                                <label class="form-label shipping-label" for="adr-line-2">Code Postal</label>
+                                                <input class="form-input shipping-input" type="text" id="postal_code" name="zip"
+                                                    placeholder="68000">
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-row">
+                                            <div class="form-col-50">
+                                                <label class="form-label shipping-label" for="city"> Ville</label>
+                                                <input class="form-input shipping-input" type="text" id="locality" name="city"
+                                                    placeholder="Colmar">
+                                            </div>
+                                            <div class="form-col-50">
+                                                <label class="form-label shipping-label" for="country">Pays</label>
+                                                <select class="shipping-input" name="country" id="country">
+                                                    <option value="BEL">Belgique</option>
+                                                    <option value="FRA" selected>France</option>
+                                                    <option value="LUX">Luxembourg</option>
+                                                    <option value="CHE">Suisse</option>
+                                                </select>
+                                            </div>
+                                        </div>
+        
+                                        <label>
+                                            <input class="form-input adress-check" id="inputCheck" type="checkbox"
+                                                checked="checked" name="sameadr">
+                                            L'adresse de livraison est la même que l'adresse de facturation.
+                                        </label>
+                                    </div>
+        
+                                    <div class="form-col-50 form-billing-address" id="form-billing-address">
+        
+                                        <h3 class="form-headings">Adresse de facturation</h3>
+        
+                                        <label class="form-label billing-label" for="fname" id="ntm"> Nom Complet</label>
+                                        <input class="form-input billing-input" type="text" id="fname" name="firstname"
+                                            placeholder="Jean-Michel Michel">
+        
+                                        <label class="form-label billing-label" for="adr"> Adresse</label>
+                                        <input class="form-input billing-input" type="text" id="location" name="address"
+                                            placeholder="7 Rue Jean Michel Haussmann">
+        
+        
+                                        <label class="form-label billing-label" for="state">Complément d'adresse</label>
+                                        <input class="form-input billing-input" type="text" name="state"
+                                            placeholder="Bâtiment, résidence, appartement, code d'accès...">
+        
+        
+                                        <div class="form-row">
+                                            <div class="form-col-50">
+                                                <label class="form-label billing-label" for="city"> Ville</label>
+                                                <input class="form-input billing-input" type="text" id="locality" name="city"
+                                                    placeholder="Colmar">
+                                            </div>
+                                            <div class="form-col-50">
+                                                <label class="form-label billing-label" for="zip">Code Postal</label>
+                                                <input class="form-input billing-input" type="text" id="postal_code" name="zip"
+                                                    placeholder="68000">
+                                            </div>
+                                        </div>
+        
+                                        <label class="form-label billing-label" for="country">Pays</label>
+                                        <select class=" billing-input" name="country" id="country">
+                                            <option value="BEL">Belgique</option>
+                                            <option value="FRA" selected>France</option>
+                                            <option value="LUX">Luxembourg</option>
+                                            <option value="CHE">Suisse</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="col-50">
-                                  <label for="zip">Zip</label>
-                                  <input type="text" id="zip" name="zip" placeholder="10001">
+        
+                                <label class="form-label cards-label" for="fname">Cartes acceptées :</label>
+                                <div class="form-icon-container">
+                                    <i class="fa fa-cc-visa"></i>
+                                    <i class="fa fa-cc-amex"></i>
+                                    <i class="fa fa-cc-mastercard"></i>
                                 </div>
-                              </div>
-                            </div>
-                  
-                            <div class="col-50">
-                              <h3>Payment</h3>
-                              <label for="fname">Accepted Cards</label>
-                              <div class="icon-container">
-                                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                <i class="fa fa-cc-discover" style="color:orange;"></i>
-                              </div>
-                              <label for="cname">Name on Card</label>
-                              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-                              <label for="ccnum">Credit card number</label>
-                              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                              <label for="expmonth">Exp Month</label>
-                              <input type="text" id="expmonth" name="expmonth" placeholder="September">
-                  
-                              <div class="row">
-                                <div class="col-50">
-                                  <label for="expyear">Exp Year</label>
-                                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+        
+                                <div>
+                                    <h3 class="form-headings">Paiement</h3>
+                                    <label class="form-label" for="cname">Nom inscrit sur la carte</label>
+                                    <input class="form-input" type="text" id="cname" name="cardname"
+                                        placeholder="Jean-Michel Michel">
+                                    <label class="form-label" for="ccnum">Numéro de carte</label>
+                                    <input class="form-input" type="text" id="ccnum" name="cardnumber"
+                                        placeholder="1111-2222-3333-4444">
+        
+                                    <div class="form-row">
+                                        <div class="form-col-50">
+                                            <label class="form-label" for="expyear">Date d'expiration</label>
+                                            <input class="form-input" type="text" id="expyear" name="expyear"
+                                                placeholder="01/2023">
+                                        </div>
+                                        <div class="form-col-50">
+                                            <label class="form-label" for="cvv">CVV</label>
+                                            <input class="form-input" type="text" id="cvv" name="cvv" placeholder="352">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-50">
-                                  <label for="cvv">CVV</label>
-                                  <input type="text" id="cvv" name="cvv" placeholder="352">
-                                </div>
-                              </div>
-                            </div>
-                  
-                          </div>
-                          <label>
-                            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                          </label>
-                          <input type="submit" value="Continue to checkout" class="btn">
-                        </form>
-                      </div>
+                                <input type="submit" value="Valider la commande" class="form-btn">
+                            </form>
+                        </div>
                     </div>
-                  
-                    
-                  </div>
+                </div>
             </div>
         </main>
 
@@ -156,6 +227,8 @@
         <script src='./js/display.js' async></script>
         <script src="./js/functions.js"></script>
         <script src='./js/cart.js' async></script>
+        <script src="./js/form.js"></script>
+
     </body>
 </html>
 

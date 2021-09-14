@@ -1,53 +1,47 @@
-
 let cart = JSON.parse(localStorage.getItem("cart"));
-console.log(localStorage);
 console.log(cart);
-
-// let qtyParsed = parseFloat(cart[i].qty);
+console.log(localStorage);
 
 let emptyCartMsg = () => {
     let cartContainer = document.getElementById('cart-content');
     let msg = createHtmlElement('p', 'empty-cart-msg', 'id', 'emptyCartMsg');
+    let link = createHtmlElement('a', 'homepage-link', 'href', 'index.html');
+    link.textContent = ` Aller à page d'accueil`;
     msg.textContent = 'Votre panier est vide.'
+    msg.appendChild(link);
     cartContainer.appendChild(msg);
 
 }
-
-
-
-// --------------------------------EMPTY CART--------------------------------
-
-// const clearCart = () => {
-//     localStorage.removeItem('cart');
-//     window.location.reload();
-//     console.log(localStorage);
-// }
-
-// let emptyCartBtn = document.getElementById('empty-cart');
-
-// emptyCartBtn.addEventListener('click', () => clearCart());
-
-// ----------------------------------------------------------------
-
 
 // --------------------------------DISPLAY CART CONTENT--------------------------------
 
 const getCart = async () => {
 
     let cartContainer = document.getElementById('cart-content');
-   
+
     if (cart.length >= 1) {
 
-         // -----------------------TOTAL PRICES CALCULATION------------------------
+        // -----------------------TOTAL PRICES CALCULATION------------------------
 
-            const reducer = (accumulator, currentValue) => accumulator + currentValue;
-            const totalPricePerItem = cart.map(el => el.price * el.qty);
-            const cartTotalPrice = totalPricePerItem.reduce(reducer);
-            const parsedCartTotalPrice = cartTotalPrice.toFixed(2).replace('.', ',')
-            let totalAmountContainer = document.getElementById('total-amount');
-            let totalAmount = createHtmlElement('p', 'cart-total-amount');
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        const totalPricePerItem = cart.map(el => el.price * el.qty);
+        const cartTotalPrice = totalPricePerItem.reduce(reducer);
+        const parsedCartTotalPrice = cartTotalPrice.toFixed(2).replace('.', ',')
+        // let totalAmountContainer = document.getElementById('total-amount');
+        // let totalAmount = createHtmlElement('p', 'cart-total-amount');
+        // totalAmount.textContent = `${parsedCartTotalPrice} €`;
+        // totalAmountContainer.append(totalAmount);
+
+        let totalAmount = document.getElementById('cart-total-amount');
+        console.log(totalAmount)
+        totalAmount.innerHTML = `Montant total : ${parsedCartTotalPrice}€`;
+
+        const updateTotalPrice = () => {
+            let totalPricePerItem = cart.map(el => el.price * el.qty);
+            let cartTotalPrice = totalPricePerItem.reduce(reducer);
+            let parsedCartTotalPrice = cartTotalPrice.toFixed(2).replace('.', ',')
             totalAmount.textContent = `${parsedCartTotalPrice} €`;
-            totalAmountContainer.append(totalAmount);
+        }
 
         // -------------------------------------------------------------------------
 
@@ -70,64 +64,85 @@ const getCart = async () => {
 
 
                 <div class="cart-item-prices">
-                    <div class="product-price">
+                    <div class="product-price item-line">
                         <h5 class="price-title">Prix</h4>
                         <p class="cart-price"><span>${stringPrice} €</span> </p>
                     </div>
 
-                    <div class="quantity-selector">
+                    <div class="quantity-selector item-line">
                         <!-- <label id="cart-qty-label" for="product-quantity" class="cart-item-qty align-middle mb-0 mb-md-4 py-auto">Quantité</label> -->
                         <h5 class="cart-item-qty">Quantité</h5>
-                        <input type="number" id="product-quantity" name="product-quantity" class="input-qty" value="${itemQty}" min="1" max="100">
+                        <div class="input-block">
+                            <button class="qty-minus">-</button>
+                            <input type="number" id="product-quantity" name="product-quantity" class="input-qty" value="${itemQty}" min="1" max="100" readonly="readonly">
+                            <button class="qty-plus">+</button>
+                        </div>
                     </div>
 
-                    <div class="product-total-price">
+                    <div class="product-total-price item-line">
                         <h5 class="total-price-title">Prix Total</h4>
-                        <p class="total-price"><span class="">${itemTotalPrice} €</span></p>
+                        <p class="total-price"><span class="item-total-price">${itemTotalPrice} €</span></p>
                     </div>
                     <button class="remove-product remove-product-desktop" id="removeItemBtn">Supprimer</button>
                 </div>`
 
             cartContainer.append(cartItemTemplate);
-
-        };
-
+            
+            let minusBtn = cartItemTemplate.getElementsByClassName('qty-minus');
+            let plusBtn = cartItemTemplate.getElementsByClassName('qty-plus');
+            let itemPriceToUpdate = cartItemTemplate.getElementsByClassName('item-total-price');
+            let qtySelector = cartItemTemplate.getElementsByClassName('input-qty');
+            let qtySelectorValue = Number(qtySelector[0].value);
+            let removeItemBtns = cartItemTemplate.getElementsByClassName('remove-product');
+            removeItemBtns = Array.from(removeItemBtns)
+        
+            minusBtn[0].addEventListener('click', (event) => {
+                event.preventDefault();
+                if (qtySelector[0].value != 1) {
+                    qtySelector[0].value = --qtySelectorValue;
+                    cart[i].qty = qtySelectorValue;
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    updateTotalPrice();
+                } else {
+                    qtySelector[0].value = 1;
+                }
+                let updatedPrice = itemPrice * cart[i].qty;
+                console.log(updatedPrice);
+                itemPriceToUpdate[0].textContent = `${getParsedPrice(updatedPrice)} €`;
+            });
+        
+            plusBtn[0].addEventListener('click', (event) => {
+                event.preventDefault();
+                if (qtySelector[0].value != 100) {
+                    qtySelector[0].value = ++qtySelectorValue;
+                    cart[i].qty = qtySelectorValue;
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    updateTotalPrice();
+                }
+                let updatedPrice = itemPrice * cart[i].qty;
+                itemPriceToUpdate[0].textContent = `${getParsedPrice(updatedPrice)} €`;
+            });
+        
+            for (let btn = 0; btn < removeItemBtns.length; btn++) {
+                removeItemBtns[btn].addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const index = cart.indexOf(cart[i]);
+                    if (index > -1) {
+                        cart.splice(index, 1);
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        window.location.reload();
+                    };
+                });
+            };   
+        }
     } else {
         emptyCartMsg();
         document.getElementById('cartSummary').remove();
         document.getElementById('orderForm').remove();
     };
-    
-    let removeBtnList = document.getElementsByClassName('remove-product');
-    console.log(removeBtnList);
-    removeBtnList = Array.from(removeBtnList);
-    console.log(removeBtnList);
-
-    for (let btn = 0 ; btn < removeBtnList.length ; btn++) {
-        removeBtnList[btn].addEventListener('click', (event) => {
-            event.preventDefault()
-            cart.splice(btn, 1);
-            localStorage.setItem("cart", JSON.stringify(cart));
-            window.location.reload();
-        });
-    }
-
-    // let qtySelectorsList = document.getElementsByClassName('input-qty');
-    // console.log(qtySelectorsList);
-    // qtySelectorsList = Array.from(qtySelectorsList);
-    // console.log(qtySelectorsList);
-
-    // for (let input = 0 ; input < qtySelectorsList.length ; input++) {
-    //     qtySelectorsList[input].addEventListener('change', (event) => {
-    //         event.preventDefault()
-    //         console.log('wshmaggle');
-    //     });
-    // }
 };
 
-
-getCart();
+getCart()
 
 // ------------------------------------------------------------------------------------------------
-
 
