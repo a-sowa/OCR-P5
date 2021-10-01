@@ -42,15 +42,14 @@ const displayProductNew = async() => {
     
     addToCartBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        if (cart === null) {
-            cart = [];
-        };
         let imgProduct = product[0].imageUrl;
         let selectedQty = Number(qtySelector.value);
         let selectedLense = optionSelector.value;
         let selectedProduct = new cartItem(product[0]._id, product[0].name, selectedLense, correctingApiPrices(product[0].price), selectedQty, imgProduct);
         let itemIsInCart = cart.find(cart => cart["id"] == selectedProduct._id || cart["option"] == selectedProduct.option);
-        
+        if (cart === null) {
+            cart = [];
+        };
         if (itemIsInCart) {
             console.log(cart);
             itemIsInCart.qty++;

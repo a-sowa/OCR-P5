@@ -23,9 +23,14 @@ const getProducts = async () => {
 }
 
 
-const getParsedPrice = (price) => {
+const getApiParsedPrice = (price) => {
     let numberPrice = Number(`${price}e-2`);
     let parsedPrice = parseFloat(numberPrice).toFixed(2).replace('.' , ',');
+    return parsedPrice;
+}
+
+const getParsedPrice = (price) => {
+    let parsedPrice = parseFloat(price).toFixed(2).replace('.' , ',');
     return parsedPrice;
 }
 

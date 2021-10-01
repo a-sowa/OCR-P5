@@ -23,7 +23,7 @@ const displayProduct = async () => {
     await getProducts();
     return products.slice(0, 6).map((product) => {
         let productHref = `./product.html?id=${product._id}`;
-        createProductCard(product.name, product.imageUrl, getParsedPrice(product.price), productHref) ;
+        createProductCard(product.name, product.imageUrl, getApiParsedPrice(product.price), productHref) ;
     })
 }
 

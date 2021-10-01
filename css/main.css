@@ -375,7 +375,7 @@ footer {
   /* Firefox */
 }
 
-.cart-item-prices div {
+.cart-item-prices .item-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,8 +403,12 @@ footer {
 .cart-item-prices input {
   text-align: center;
   border: 1px solid black;
-  width: 50px;
+  width: 32px;
   height: 25px;
+  margin: 0 0px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .cart-item-prices input::-webkit-outer-spin-button,
@@ -420,6 +424,34 @@ footer {
 .hr {
   width: 100%;
   border-top: 1px solid black;
+}
+
+.input-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.input-block .qty-minus, .input-block .qty-plus {
+  width: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-block .qty-minus:hover, .input-block .qty-plus:hover {
+  color: white;
+  background-color: black;
+}
+
+.input-block button {
+  background-color: #fff;
+  border: none;
 }
 
 .product-img-cart {
@@ -512,7 +544,7 @@ footer {
             justify-content: space-evenly;
     width: 100%;
   }
-  .cart-item-prices div {
+  .cart-item-prices .item-line {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -800,5 +832,14 @@ footer {
     padding-left: 30px;
     padding-right: 30px;
   }
+}
+
+.cart-item {
+  border: 1px solid black;
+  margin: 15px;
+}
+
+.cart-item-headings {
+  padding: 0 20px;
 }
 /*# sourceMappingURL=main.css.map */
